@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="var_du_bind_du_layout_fragment_Details_ville"
+            type="com.ynov.examenandroid.bo.ville.Ville"/>
+        <variable
+            name="var_du_bind_du_layout_fragment_Logement"
+            type="com.ynov.examenandroid.bo.logement.Logement"/>
+        <variable
+            name="var_du_bind_du_layout_fragment_DetailsLogement"
+            type="com.ynov.examenandroid.bo.detail_logement.DetailsLogement"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#018786">
+
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:id="@+id/idImageViewDetailsLogement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/idDetailsNomVille"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/txtDetailLogVille"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idImageViewDetailsLogement" />
+
+        <TextView
+            android:id="@+id/idDetailsTitreAnnonce"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/txtDetailLogTitre"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idDetailsNomVille" />
+
+        <TextView
+            android:id="@+id/idDetailsPrice"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/txtDetailLogPrix"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idDetailsTitreAnnonce" />
+
+        <TextView
+            android:id="@+id/idDetailsOwner"
+            android:layout_width="109dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:text="Propriétaire :"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idDetailsPrice" />
+
+        <TextView
+            android:id="@+id/idDetailsLat"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="96dp"
+            android:text="@string/txtDetailLogLat"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idDetailsPrice" />
+
+        <TextView
+            android:id="@+id/idDetailsLng"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/txtDetailLogLng"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idDetailsLat" />
+
+        <TextView
+            android:id="@+id/idDetailsNomVilleV"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="148dp"
+            android:text="@{var_du_bind_du_layout_fragment_Logement.place.name}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/idDetailsNomVille"
+            app:layout_constraintTop_toTopOf="@id/idDetailsNomVille" />
+
+        <TextView
+            android:id="@+id/idDetailsTitreAnnonceV"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@{var_du_bind_du_layout_fragment_Logement.title}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/idDetailsTitreAnnonce"
+            app:layout_constraintTop_toTopOf="@id/idDetailsTitreAnnonce" />
+
+        <TextView
+            android:id="@+id/idDetailsPriceV"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text='@{String.valueOf(var_du_bind_du_layout_fragment_Logement.price) + " euros/mois"}'
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/idDetailsPrice"
+            app:layout_constraintTop_toTopOf="@id/idDetailsPrice" />
+
+        <TextView
+            android:id="@+id/idDetailsOwnerV"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text='@{var_du_bind_du_layout_fragment_Logement.owner}'
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.336"
+            app:layout_constraintStart_toEndOf="@+id/idDetailsOwner"
+            app:layout_constraintTop_toTopOf="@id/idDetailsOwner" />
+
+        <TextView
+            android:id="@+id/idDetailsLatV"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text='@{String.valueOf(var_du_bind_du_layout_fragment_Logement.lat)}'
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/idDetailsLat"
+            app:layout_constraintTop_toTopOf="@id/idDetailsLat" />
+
+        <TextView
+            android:id="@+id/idDetailsLngV"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text='@{String.valueOf(var_du_bind_du_layout_fragment_Logement.lng)}'
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/idDetailsLng"
+            app:layout_constraintTop_toTopOf="@id/idDetailsLng" />
+
+        <Button
+            android:id="@+id/idBtReserver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Réserver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/idAccesMap" />
+
+        <Button
+            android:id="@+id/idAccesMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Localisation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idBtReserver"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

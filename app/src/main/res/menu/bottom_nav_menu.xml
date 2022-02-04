@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/idMenu_generale"
+        android:enabled="true"
+        android:icon="@android:drawable/arrow_up_float"
+        android:title="@string/txtBottomBarHome" />
+    <item
+        android:id="@+id/idMenu_recherche"
+        android:enabled="true"
+        android:icon="@android:drawable/btn_plus"
+        android:title="@string/txtBottomBarRecherche" />
+    <item
+        android:id="@+id/idMenu_budget"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_input_get"
+        android:title="@string/txtBottomBarBudget" />
+    <item
+        android:id="@+id/idMenu_agenda"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/txtBottomBarAgenda" />
+</menu>

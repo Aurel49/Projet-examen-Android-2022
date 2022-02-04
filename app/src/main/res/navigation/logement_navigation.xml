@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/logement_navigation"
+    app:startDestination="@id/listeVilleFragment">
+
+    <fragment
+        android:id="@+id/listeVilleFragment"
+        android:name="com.ynov.examenandroid.fragments.ListeVilleFragment"
+        android:label="fragment_liste_ville"
+        tools:layout="@layout/fragment_liste_ville" >
+        <action
+            android:id="@+id/action_listeVilleFragment_to_listeLogementFragment"
+            app:destination="@id/listeLogementFragment"
+            app:popUpTo="@id/listeVilleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsLogementFragment"
+        android:name="com.ynov.examenandroid.fragments.DetailsLogementFragment"
+        android:label="fragment_details_logement"
+        tools:layout="@layout/fragment_details_logement" >
+        <argument
+            android:name="argsLogementToDetailLogement"
+            app:argType="com.ynov.examenandroid.bo.logement.Logement" />
+        <action
+            android:id="@+id/action_detailsLogementFragment_to_dateDeReservation"
+            app:destination="@id/dateDeReservation" />
+        <action
+            android:id="@+id/action_detailsLogementFragment_to_map"
+            app:destination="@id/map" />
+    </fragment>
+    <fragment
+        android:id="@+id/listeLogementFragment"
+        android:name="com.ynov.examenandroid.fragments.ListeLogementFragment"
+        android:label="fragment_liste_logement"
+        tools:layout="@layout/fragment_liste_logement" >
+        <action
+            android:id="@+id/action_listeLogementFragment_to_detailsLogementFragment"
+            app:destination="@id/detailsLogementFragment"
+            app:popUpTo="@id/listeLogementFragment" />
+        <argument
+            android:name="argsVilleToLogement"
+            app:argType="com.ynov.examenandroid.bo.ville.Ville" />
+    </fragment>
+    <fragment
+        android:id="@+id/dateDeReservation"
+        android:name="com.ynov.examenandroid.fragments.DateDeReservation"
+        android:label="fragment_date_de_reservation"
+        tools:layout="@layout/fragment_date_de_reservation" >
+        <argument
+            android:name="ArgsDetailsLogementToDateReservation"
+            app:argType="com.ynov.examenandroid.bo.logement.Logement" />
+    </fragment>
+    <fragment
+        android:id="@+id/map"
+        android:name="com.ynov.examenandroid.fragments.map"
+        android:label="map" >
+        <argument
+            android:name="ArgsDetailsLogementToMap"
+            app:argType="com.ynov.examenandroid.bo.detail_logement.Coordonnees" />
+    </fragment>
+</navigation>
